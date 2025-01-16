@@ -5,6 +5,14 @@ const dotenv = require('dotenv')
 
 dotenv.config()
 
+//import methods
+const {
+    getTodo,
+    createTodo,
+    updateTodo,
+    deleteTodo
+} = require('./Controllers/todoController')
+
 //App config
 const app = express()
 const port = process.env.PORT || 8000
@@ -28,3 +36,14 @@ mongoose
 })
 
 //API Endpoints
+// Get
+app.get('/todos', getTodo)
+
+//Create
+app.post('/todos', createTodo)
+
+//Update
+app.put('/todos', updateTodo)
+
+//Delete
+app.delete('/todos', deleteTodo)
