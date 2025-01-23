@@ -11,7 +11,7 @@ const {
     createTodo,
     updateTodo,
     deleteTodo
-} = require('./Controllers/todoController')
+} = require("./controllers/todoController")
 
 //App config
 const app = express()
@@ -43,7 +43,7 @@ app.get('/todos', getTodo)
 app.post('/todos', createTodo)
 
 //Update
-app.put('/todos', updateTodo)
+app.put('/todos/:id', updateTodo)
 
 //Delete
-app.delete('/todos', deleteTodo)
+app.delete('/todos/:id', deleteTodo)
